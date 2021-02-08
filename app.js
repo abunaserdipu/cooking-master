@@ -1,3 +1,4 @@
+// Work on search food start
 const searchFoods = () => {
   const searchInput = document.getElementById("food-input").value;
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
@@ -19,11 +20,12 @@ const displayFoods = (foods) => {
         <img onclick="displayFoodDetails('${food.idMeal}')" src="${food.strMealThumb}"></img>
         <h5>${food.strMeal}</h5>
         `;
-    // foodDiv.innerHTML = foodsInfo;
     foodsDiv.appendChild(foodDiv);
   });
 };
+// Work on search food end
 
+// Work on food ingredients start
 const displayFoodDetails = (id) => {
   console.log(id);
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
@@ -61,3 +63,4 @@ const displayError = (error) => {
   const errorTag = document.getElementById("error-message");
   errorTag.innerText = error;
 };
+// Work on food ingredients end
